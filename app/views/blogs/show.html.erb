@@ -15,7 +15,9 @@
 
   <p>
     <strong>Comment:</strong>
-    <%= @blog.comments.count.to_i + "comments" %>
+<!--    ErrorCause：commentが誤り-->
+<!--    FixReason：blogは複数のcommentを持っている意味なのでcommentsに修正-->
+    <%= @blog.comments.count.to_i %>comments
   </p>
 
   <p>

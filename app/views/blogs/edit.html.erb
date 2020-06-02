@@ -1,6 +1,7 @@
 <h1>Editing Blog</h1>
-
-<% render 'form', blog: @blog %>
+<!--ErrorCause：タイポ-->
+<!--FixReason：先頭に=が抜けているので追記-->
+<%= render 'form', blog: @blog %>
 
 <%= link_to 'Show', @blog %> |
 <%= link_to 'Back', blogs_path %>

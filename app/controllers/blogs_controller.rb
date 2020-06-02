@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update]
+  # 削除機能不具合のため、destroyを追加
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
     @blogs = Blog.all
@@ -42,6 +43,8 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title)
+    # ErrorCause：contentカラムをストパラに指定していないためparamsできない
+    # FixReason：contentを追加
+    params.require(:blog).permit(:title, :content)
   end
 end
